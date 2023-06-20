@@ -37,45 +37,22 @@ list = glob.glob(pattern)
 for x in list:
     print(os.path.basename(x), os.path.getsize(x))
 
-print('')
-print('')
-print('')
-
-## PIN checking mechanism
-#
-#variables
-pin = 2023
-attempts = 0
+PIN = 2023
 max_attempts = 3
+Count = 0
 
-print('Welcome to Aurora Bank')
-
-enter_pin = input("enter PIN")
-
-while attempts < max_attempts:
-    # users pic guess
-    print('Please enter your 4 digit PIN.')
-    print('You have', max_attempts - attempts, 'attempt(s) remaining!')
-    guess = input("PIN:")
-    # convert the guess to a number (input gives us a string)
-    if len(guess) != 4:
-        print('Incorrect amount of digits! Please enter your 4 digit PIN!')
-        print('')
+while Count < max_attempts:
+    enter_pin = input('enter your PIN')
+    if enter_pin == PIN:
+        print('correct PIN')
+        print('access granted')
+        break
+    # if incorrect_PIN 'incorrect PIN please try again' appears
+    # Prompts to try again up the max number of attempts allowed
+    # print('incorrect PIN please try again')
     else:
-        guess = int(guess)
-        # if the guess is identical to the pin, print 'Correct' & exit
-        if guess == pin:
-            print('Success, you may withdraw your money!')
-            exit()
-        # else, print line & +1 to attempts
-        else:
-            print('Wrong, please try again.')
-            attempts += 1
-            print('')
-        print('Max number of attempts reach, account blocked!')
+        Count += 1
+        print("Wrong pin entered")
 
-
-
-
-
-
+if Count == max_attempts:
+        print("Wrong pin entered 3 times, account locked")
