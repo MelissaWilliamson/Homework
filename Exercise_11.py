@@ -5,10 +5,10 @@ Belgium = 'Belgium,10445852,Brussels,737966,Europe,1830,Euro,Catholicism,Dutch,F
 # Count the length of the Belgium string
 length = len(Belgium)
 
-# Print a line of hyphens
+# Print a line of hyphens -
 print('-' * length)
 
-# Replace comma separators with colons
+# Replace commas in string with colons
 modified_string = Belgium.replace(',', ':')
 
 # Extract population information
@@ -17,12 +17,13 @@ pop_belgium = int(popinfo[1])
 pop_brussels = int(popinfo[3])
 total_pop = (pop_brussels + pop_belgium)
 
-# Print the modified string and population information
+# Print the modified string and population info
 print(modified_string)
 
 # Print a line of hyphens
 print('-' * length)
 
+# detailed information for the cities and the country
 print("Population of Belgium: ", pop_belgium)
 print("Population of Brussels: ", pop_brussels)
 print("Total Population: ", total_pop)
